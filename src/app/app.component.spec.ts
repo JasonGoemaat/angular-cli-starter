@@ -2,14 +2,18 @@
 
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { AppModule } from './app.module';
 
 describe('App: AngularCliStarter', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [
-        AppComponent
       ],
+      imports: [
+        AppModule
+      ]
     });
+    //TestBed.configureTestingModule(new AppModule());
   });
 
   it('should create the app', async(() => {
