@@ -143,7 +143,7 @@ var MarkdownReporter = function(baseReporterDecorator, config, emitter, logger, 
 
     var passed = bytype.passed.length;
     var failed = bytype.failed.length;
-    var skipped = bytype.failed.length;
+    var skipped = bytype.skipped.length;
     var total = passed + failed + skipped;
 
     if (passed == total) {
@@ -151,7 +151,7 @@ var MarkdownReporter = function(baseReporterDecorator, config, emitter, logger, 
     } else if (skipped == 0) {
       resultLines.push(`## ${failed}/${total} Tests Failed!`);
     } else {
-      resultLines.push(`## ${failed}/${passed} Tests Failed! (${skipped} skipped)`);
+      resultLines.push(`## ${failed}/${total} Tests Failed! (${skipped} skipped)`);
     }
 
     resultLines.push('');
@@ -181,10 +181,10 @@ var MarkdownReporter = function(baseReporterDecorator, config, emitter, logger, 
       ## 1/4 Tests Failed (2 skipped)
 
       * App: AngularCliStarter
-       * _205 ms - should create the app_
-       * _93 ms - should have as title 'app works!'_
-       * _81 ms - should render title in a h1 tag_
-       * **FAILED** _70ms - should render SharedComponent in a h2 tag_
+        * _205 ms - should create the app_
+        * _93 ms - should have as title 'app works!'_
+        * _81 ms - should render title in a h1 tag_
+        * **FAILED** _70ms - should render SharedComponent in a h2 tag_
     */
 
     fs.writeFileSync('./test_results.md', resultLines.join('\r\n'));
