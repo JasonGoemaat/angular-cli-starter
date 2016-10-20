@@ -1,1 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
+// $icon-font-path: 'assets/vendors/';
+// $fa-font-path: 'assets/vendors/';
+$icon-font-path: '/bootstrap-sass/assets/fonts/bootstrap/';
+$fa-font-path: '/font-awesome/fonts/';
+
+$grid-columns: 16;
+$grid-gutter-width: 10px;
+
+$font-family-sans-serif: -apple-system-font,
+'Segoe UI',
+'Roboto',
+sans-serif;
+
+$btn-danger-bg: darken(#CD0200, 10%); // spacelab #CD0200, want it a little darker
+
+@import "node_modules/bootswatch/spacelab/_variables";
+@import "node_modules/bootstrap-sass/assets/stylesheets/_bootstrap";
+@import "node_modules/bootswatch/spacelab/_bootswatch.scss";
+@import 'node_modules/font-awesome/scss/font-awesome';
